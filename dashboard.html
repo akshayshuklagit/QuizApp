@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quysy-Dashboard</title>
+  <link href="dashboard.css" rel="stylesheet" type="text/css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/charts.css/dist/charts.min.css">
+  <style>
+    #take-test{
+      animation: highlight 1s alternate infinite;
+    }
+
+    @keyframes highlight {
+      0% {scale: 0.8;}
+      100% {scale: 1;}
+    }
+
+  </style>
+</head>
+<body class="dark-theme relative">		
+  <section class="main" id="main">
+    <div class="top">
+      <div class="hamburger" id="hamburger" onclick="sidebar()">
+        <div class="line" id="lineTop1"></div>
+        <div class="line" id="lineBottom1"></div>
+      </div>
+      <a id="take-test" class="bg-green-500 py-1 px-3 ml-6 rounded-md hover:bg-green-400 disabled:bg-blue-300"><button>Take test</button></a>
+      <ion-icon name="calendar-number-outline" class="calendar"></ion-icon>
+      <div class="search-box">
+        <input type="text" placeholder="Search...">	
+        <ion-icon name="search"></ion-icon>
+      </div>
+      <div class="account">
+        <p  id="account" class="lowercase"></p>
+        <div class="notification">3</div>
+        <ion-icon name="person-circle-outline"></ion-icon>
+      </div>
+    </div>
+    <div class="content" id="content">
+      <h1 class="greeting">Hello, <span id="user-name" class="accent capitalize"></span>!</h1>
+      <p class="subtitle">You are <span class="accent">71%</span> more productive today!</p>
+      <div class="row">
+        <div class="data rect">
+          <div class="container session-length">
+            <!-- <ion-icon name="hourglass-outline" class="session-length-icon"></ion-icon>							 -->
+            <div class="text">
+               <h3>Leaderboard</h3> 
+                <div class="container  py-1 w-auto">
+                  
+                  <div class="bg-white shadow-md rounded-md overflow-hidden ">
+                      <table >
+                          <thead>
+                              <tr>
+                                  <th class="px-9 py-3 bg-gray-200 text-left text-xs leading-4 font-medium text-gray-700 uppercase tracking-wider">Rank</th>
+                                  <th class="px-9 py-3 bg-gray-200 text-left text-xs leading-4 font-medium text-gray-700 uppercase tracking-wider">User</th>
+                                  <th class="px-9 py-3 bg-gray-200 text-left text-xs leading-4 font-medium text-gray-700 uppercase tracking-wider">Score</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <tr>
+                                  <td class="px-9 py-1 whitespace-no-wrap border-b border-gray-200 text-sm">1</td>
+                                  <td class="px-9 py-1 whitespace-no-wrap border-b border-gray-200 text-sm">Rehan</td>
+                                  <td class="px-9 py-1 whitespace-no-wrap border-b border-gray-200 text-sm">80</td>
+                              </tr>
+                              <tr>
+                                  <td class="px-9 py-1 whitespace-no-wrap border-b border-gray-200 text-sm">2</td>
+                                  <td class="px-9 py-1 whitespace-no-wrap border-b border-gray-200 text-sm">Akshay</td>
+                                  <td class="px-9 py-1 whitespace-no-wrap border-b border-gray-200 text-sm">75</td>
+                              </tr>
+                              <tr>
+                                  <td class="px-9 py-1 whitespace-no-wrap border-b border-gray-200 text-sm">3</td>
+                                  <td class="px-9 py-1 whitespace-no-wrap border-b border-gray-200 text-sm">Deepak</td>
+                                  <td class="px-9 py-1 whitespace-no-wrap border-b border-gray-200 text-sm">72</td>
+                              </tr>
+                              <!-- Repeat the above row structure for each user in the leaderboard -->
+                          </tbody>
+                      </table>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="small-container">
+          <div class="data small red">
+            <div class="container">
+              <!-- <ion-icon name="trending-down"></ion-icon> -->
+              <div class="text">
+                <p>Recommended Quiz</p>
+                <div class="bg-white shadow-md rounded-md p-2 ml-3">
+                  <h2 class="text-md font-semibold mb-2 text-md ">✅2024 NBA<br> Season</h2>
+                  <a href="#" class="inline-block bg-green-300  text-white px-1 py-1 rounded hover:bg-blue-600 text-sm">Start Quiz</a>
+              </div>
+               
+              </div>
+            </div>
+          </div>
+          <div class="data small green">
+            <div class="container">
+              <ion-icon name="trending-up"></ion-icon>
+              <div class="text">
+                <p>Performance</p>
+              </div>
+            </div>
+            <h1 id="four">38%</h1>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row">
+        
+        <div class="data large">
+            <div class="container" style="position: absolute; top: 0; width: 98%;">
+                <ion-icon name="flag-outline" class="reviews-icon"></ion-icon>
+                <div class="text">
+                  <h3>Score</h3>
+                  <p>Test Scores</p>
+                </div>
+                <!-- <i name="open-outline" id="refresh-btn" class="fa-solid fa-arrows-right "></i> -->
+        
+            </div>
+            <div class="new-div" >
+                <div class="data-container">
+                    <div class="header text-slate-900 bg-grey-400">
+                        <div>Date</div>
+                        <div>Test ID</div>
+                        <div>Category</div>
+                        <div>Score</div>
+                        <div>Correct Q.</div>
+                        <div>IncorrectQ.</div>
+                        <div>Time Taken</div>
+                    </div>
+                </div>
+                <div id="data-from-db" class="h-[300px] overflow-auto flex flex-col gap-3   text-sm">
+                </div>
+                
+            </div>
+            
+
+
+        </div>
+      </div>
+     
+            
+        
+      <div class="row">
+        <div class="data large">
+          <div class="container">
+            <ion-icon name="flag-outline" class="reviews-icon"></ion-icon>
+            <div class="text">
+              <h3>REVIEWS</h3>
+            </div>
+
+          </div>
+          <div class="reviews">
+            <div class="review">
+              <div class="image-text-container">
+                <img src="">
+                <div class="text-container">
+                  <h4 class="text-gray-200 p-1.5">Karthik K</h4>
+                  <div class="stars text-sm">
+                    <i class="fa-solid fa-star pl-2" style="color: #ade58f;"></i>
+                    <i class="fa-solid fa-star" style="color: #ade58f;"></i>
+                    <i class="fa-solid fa-star" style="color: #ade58f;"></i>
+                    <i class="fa-solid fa-star" style="color: #ade58f;"></i>
+                    <i class="fa-solid fa-star" style="color: #ade58f;"></i>
+                  </div>
+                </div>
+              </div>
+              <p class="text-slate-300 text-sm p-1.5">A brilliant service! Fast, efficient, and works great! I was very impressed by it. A must-have!</p>
+            </div>
+            <div class="review">
+              <div class="image-text-container">
+            
+                <div class="text-container">
+                  <h4 class="text-gray-200 p-2">Aditya</h4>
+                  <div class="stars text-sm">
+                    <i class="fa-solid fa-star pl-2" style="color: #ade58f;"></i>
+                    <i class="fa-solid fa-star" style="color: #ade58f;"></i>
+                    <i class="fa-solid fa-star" style="color: #ade58f;"></i>
+                    <i class="fa-solid fa-star" style="color: #ade58f;"></i>
+                    <i class="fa-solid fa-star" style="color: #ade58f;"></i>
+                  </div>
+                </div>
+              </div>
+              <p class="text-slate-300 text-sm p-2">Stunning and beautiful design. Professional service that is always here for you! Was skeptical at first, but was way better than I expected!</p>
+            </div>
+            <div class="review">
+              <div class="image-text-container">
+              
+                <div class="text-container">
+                  <h4 class="text-gray-200 p-1.5">Deepak Kumar</h4>
+                  <div class="stars text-sm">
+                    <i class="fa-solid fa-star pl-2" style="color: #ade58f;"></i>
+                    <i class="fa-solid fa-star" style="color: #ade58f;"></i>
+                    <i class="fa-solid fa-star" style="color: #ade58f;"></i>
+                    <i class="fa-solid fa-star" style="color: #ade58f;"></i>
+                    <i class="fa-solid fa-star" style="color: #ade58f;"></i>
+                  </div>
+                </div>
+              </div>
+              <p class="text-slate-300 text-sm p-2">Elegant product that just feels right; good for the environment, absolutely wonderful results, and intuitive style.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="score-card-contianer" class="bg-[rgba(0,0,0,.6)] inset-0 absolute invisible">
+      <!-- Score-Card -->
+      <div
+        class="bg-white w-[20%] text-center space-y-6 p-4 font-semibold text-gray-700 rounded-md absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-110">
+        <h3 class="font-semibold text-3xl" onclick="document.body.classList.remove('overflow-hidden')">Take Test</h3>
+        <div>
+          <select class="border text-xs border-gray-500 rounded-md px-3 py-2" name="" id="category">
+            <option value="select">-Category-</option>
+            <option value="9">G.K</option>
+            <option value="18">Science</option>
+            <option value="21">Sports</option>
+          </select>
+          <select class="border text-xs border-gray-500 rounded-md px-3 py-2 mt-2" name="" id="levels">
+            <option value="select">--Level-- </option>
+            <option value="music">Easy</option>
+            <option value="science">Medium</option>
+            <option value="sports">Hard</option>
+          </select>
+          
+        </div>
+        <p id="test-start-time" class="text-xs"></p>
+        <section class="flex gap-2 justify-around m-auto text-xs text-white">
+          <button
+            id="take-test-btn"
+            class="bg-blue-600 py-1 px-3 rounded-sm hover:bg-blue-500 disabled:bg-blue-300" >Start Test</button>
+        </section>
+      </div>
+    </div>
+  </section>
+  <div class="footer">
+    <div class="address">
+       <span class="street">Main Office Address:</span>
+      <span class="street">  <i class="fa-solid fa-location-dot"></i>  Ayodhya</span>
+      <span class="street">Uttar Pardesh, India</span>
+      <span class="street">2240001</span>
+    </div>
+    <div class="phone">
+      <span>  <i class="fa-solid fa-phone"></i>   Phone: +91 9115360000</span>
+      <span>  <i class="fa-solid fa-fax"></i>  Fax: +91 68782801</span>
+    </div>
+    <div class="email">
+      <span class="email">Ask your question by email</span>
+      <a class="email" href="mailto:adishukla8765@gmail.com?&subject=Feedback from LMS
+      &"><i class="fa-solid fa-envelope"></i> adishukla8765@gmail.com</a>
+    </div>
+    <div class="copyright">
+      <span>© 2024 Dream Lms Co., Ltd.</span>
+    </div>
+  </div>
+  <script src="test.js"></script>
+  <script>
+    let perform = document.querySelector("#four");
+    
+    let counter1 =18;
+    let id1 = setInterval(()=>{
+      if (counter1 >=52) clearInterval(id1);
+      perform.innerText = `${counter1}%`
+      counter1++;
+    },60)
+  </script>
+  
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

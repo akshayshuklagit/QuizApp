@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quysy-Quiz</title>
+    <!-- <link rel="stylesheet" href="../style.css" /> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="h-[100dvh] bg-[#523bae] grid place-items-center">
+    <!-- Heading: Quiz-Dashboard -->
+    
+
+    <!-- Loader : Loading... -->
+    <h3 id="loader" class="text-xl text-white font-semibold absolute invisible">
+      Loading...
+    </h3>
+
+    <!-- Quiz card -->
+    <div
+      id="quiz-card"
+      class="w-[90%] shadow-lg shadow-gray-900 rounded-md overflow-hidden bg-white"
+    >
+      <!-- Quiz-nav -->
+      <nav
+        class="nav grid grid-cols-3 p-3 border-b-2 border-blue-300 text-gray-600 text-sm font-semibold"
+      >
+        <h3 class="uppercase italic justify-self-start">Quysy</h3>
+        <h3 class="justify-self-center"></h3>
+        <h3 id="time-remaining-panel" class="justify-self-end">
+          Time Remaining : 30:00
+        </h3>
+      </nav>
+
+      <!-- Sidenav and Main container -->
+      <div class="flex">
+        <!-- Sidenav -->
+        <side class="border-r-2 border-blue-300 max-w-[20%]">
+          <section class="flex justify-between p-3 text-sm">
+            <p id="question-side-head">Question 1/8</p>
+            <p>Need Help ?</p>
+          </section>
+          <h3 class="px-3 py-1 text-sm font-semibold">Attempt Status</h3>
+          <section
+            class="p-3 text-white text-sm flex flex-wrap justify-between border-t-2 border-blue-300"
+          >
+            <p class="bg-green-600 py-1.5 px-2 rounded-md">Attempt</p>
+            <p class="bg-yellow-600 py-1.5 px-2 rounded-md">Pending</p>
+            <p class="bg-blue-600 py-1.5 px-2 rounded-md">Skipped</p>
+          </section>
+          <div
+            id="question-no-tracker"
+            class="border-t-2 border-b-2 border-blue-300 p-3 flex flex-wrap gap-2 [&>span]:w-[55px] [&>span]:h-[25px] [&>span]:p-2 [&>span]:rounded-md [&>span]:grid [&>span]:place-content-center [&>span]:shadow-sm [&>span]:shadow-gray-600 text-xs font-semibold overflow-auto h-[150px]"
+          >
+            
+          </div>
+        </side>
+
+        <!-- Main -->
+        <main class="flex-1 p-3 text-sm">
+          <div>
+            <h3 id="question-head" class="font-semibold mb-2">Question 1</h3>
+            <p id="question-panel" class="mb-4">
+              Which is Fastest Animal in the World ?
+            </p>
+            <h3 class="font-semibold mb-2">Options :</h3>
+            <section
+              id="options-panel"
+              class="flex flex-col gap-2 [&>button]:shadow-sm [&>button]:shadow-gray-400 [&>button]:text-left [&>button]:p-2 [&>button]:max-w-[40%] [&>button]:rounded-lg"
+            >
+              
+            </section>
+          </div>
+
+          <section class="flex justify-between mt-44 text-white">
+            <button
+              id="nextBtn"
+              class="rounded py-1.5 px-4 bg-[#523bae] disabled:bg-[#927ce9] mr-2"
+            >
+              Next
+            </button>
+            <button id="submitBtn" class="rounded py-1.5 px-4 bg-red-500 mr-2">
+              Submit
+            </button>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <!-- Score Card Container-->
+    <div id="score-card-contianer" class="bg-[rgba(0,0,0,.6)] inset-0 absolute invisible">
+      <!-- Score-Card -->
+      <div
+        class="bg-white w-[20%] text-center space-y-6 p-4 font-semibold text-gray-700 rounded-md absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-110"
+      >
+        <h3 class="font-semibold text-3xl">Quiz Result!</h3>
+        <div
+          id="progress-loader"
+          class="w-[50%] aspect-square rounded-full grid place-items-center m-auto"
+        >
+          <span
+            class="bg-sky-100 w-[85%] aspect-square rounded-full grid place-content-center text-2xl"
+          >
+            60%
+          </span>
+        </div>
+        <p id="score-out-of">Your Score 5 out of 5</p>
+        <section class="flex justify-around m-auto text-sm text-white">
+         
+          <a
+            href="dashboard.html"
+            class="bg-blue-600 py-1 px-3 rounded-sm hover:bg-blue-500"
+            >Go To Home</a
+          >
+        </section>
+      </div>
+    </div>
+
+    <script  src="quiz.js"></script>
+  </body>
+</html>
